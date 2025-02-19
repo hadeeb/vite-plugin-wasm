@@ -28,7 +28,7 @@ export function wasmEdgeModule({ target = "cloudflare" } = {}) {
       const importPostfix = target === "vercel" ? "?module" : "";
 
       const final = code.replaceAll(
-        /__WASM_ASSET__([a-z\d]+)\.wasm/g,
+        /__WASM_ASSET__([a-z\d]+)\.wasm/gi,
         (s, assetId) => {
           const fileName = this.getFileName(assetId);
           const relativePath = path.relative(
