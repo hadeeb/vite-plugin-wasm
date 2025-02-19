@@ -23,7 +23,7 @@ export function wasmEdgeModule({ target = "cloudflare" } = {}) {
     },
     renderChunk(code, chunk, opts) {
       if (isDev) return;
-      if (!/__WASM_ASSET__([a-z\d]+)\.wasm/g.test(code)) return;
+      if (!/__WASM_ASSET__([a-z\d]+)\.wasm/gi.test(code)) return;
 
       const importPostfix = target === "vercel" ? "?module" : "";
 
