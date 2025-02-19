@@ -7,7 +7,6 @@ type RequestParams = RequestAdapterParams<{
 }>;
 
 export default defineConfig(({ command }) => ({
-  optimizeDeps: { disabled: true },
   plugins: [
     VitePluginNode({
       adapter: async ({ app, req, res }: RequestParams) => {

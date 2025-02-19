@@ -1,17 +1,16 @@
 {
   "name": "@hadeeb/vite-plugin-wasm",
-  "private": true,
-  "version": "0.0.1",
+  "private": false,
+  "version": "1.0.0",
   "description": "Vite plugin to import wasm files in cloudflare workers",
   "type": "module",
   "main": "wasm-plugin.js",
   "exports": {
-    ".": "./wasm-plugin.js",
-    "./vite-asset-plugin": "./vite-asset-plugin.js"
+    ".": "./wasm-plugin.js"
   },
   "files": [
     "wasm-plugin.js",
-    "vite-asset-plugin.js"
+    "types.d.ts"
   ],
   "scripts": {},
   "keywords": [
@@ -25,7 +24,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.14.0",
-    "vite": "^4.1.4"
-  }
+    "@types/node": "^22.13.4",
+    "vite": "^6.1.0"
+  },
+  "packageManager": "pnpm@10.4.1"
 }
