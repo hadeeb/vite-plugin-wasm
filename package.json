@@ -12,6 +12,11 @@
     "wasm-plugin.js",
     "types.d.ts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadeeb/vite-plugin-wasm.git"
+  },
+  "homepage": "https://github.com/hadeeb/vite-plugin-wasm#readme",
   "scripts": {},
   "keywords": [
     "Vite",
