@@ -23,12 +23,12 @@ export function wasmEdgeModule({ target = "cloudflare" } = {}) {
     },
     renderChunk(code, chunk, opts) {
       if (isDev) return;
-      if (!/__WASM_ASSET__([a-z\d]+)\.wasm/gi.test(code)) return;
+      if (!/__WASM_ASSET__([^\.]+)\.wasm/g.test(code)) return;
 
       const importPostfix = target === "vercel" ? "?module" : "";
 
       const final = code.replaceAll(
-        /__WASM_ASSET__([a-z\d]+)\.wasm/gi,
+        /__WASM_ASSET__([^\.]+)\.wasm/g,
         (s, assetId) => {
           const fileName = this.getFileName(assetId);
           const relativePath = path.relative(
