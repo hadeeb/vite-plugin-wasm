@@ -1,6 +1,6 @@
 // @ts-check
-import * as path from "path";
-import * as fs from "fs";
+import * as path from "node:path";
+import * as fs from "node:fs";
 
 /**
  * Vite plugin to import `.wasm` file as a `WebAssembly.Module`
@@ -33,10 +33,10 @@ export function wasmEdgeModule({ target = "cloudflare" } = {}) {
           const fileName = this.getFileName(assetId);
           const relativePath = path.relative(
             path.dirname(chunk.fileName),
-            fileName
+            fileName,
           );
           return `./${relativePath}${importPostfix}`;
-        }
+        },
       );
 
       return { code: final };
@@ -52,7 +52,7 @@ export function wasmEdgeModule({ target = "cloudflare" } = {}) {
         return `
         import fs from "fs"
 
-        const wasmModule= new WebAssembly.Module(fs.readFileSync("${filePath}"));
+        const wasmModule = new WebAssembly.Module(fs.readFileSync("${filePath}"));
         export default wasmModule;
         `;
       }

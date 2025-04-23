@@ -3,7 +3,7 @@
     "target": "es2022",
     "lib": ["es2022", "WebWorker"],
     "module": "es2022",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowJs": true,
     "checkJs": false,
     "noEmit": true,
