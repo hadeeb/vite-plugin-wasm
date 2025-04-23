@@ -1,7 +1,7 @@
 {
   "name": "@hadeeb/vite-plugin-wasm",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite plugin to import wasm files in cloudflare workers",
   "type": "module",
   "main": "wasm-plugin.js",
